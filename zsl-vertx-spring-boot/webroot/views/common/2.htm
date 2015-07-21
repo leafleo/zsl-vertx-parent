@@ -1,0 +1,521 @@
+
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <title>异步框架数据平台-应用概况</title>
+    <meta charset="UTF-8"/>
+
+    <!--search-engine-meta-part-->
+    <meta name="description" content="小米应用商店的官方开发者后台，统计服务，免费提供应用统计数据的查看。开发者可以在这里查看自己相关app的所有详细数据。">
+<meta name="keywords" content="小米开发者站，小米，小米商店，应用，APK，软件，游戏，商店，市场，开发者，提交，APK提交，提交应用，收录，上传，更新，应用更新，支持，技术支持，统计">
+<link rel="shortcut icon" href="http://www.eccar.com.cn/resources/ico/favicon.ico" type="image/x-icon">
+<link rel="icon" href="http://www.eccar.com.cn/resources/ico/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="${base}/resources/styles/4ccfa486.base.css">
+
+    <link rel="stylesheet" href="${base}/resources/styles/101ddfb2.daterangepicker-bs2.css"/>
+    <link rel="stylesheet" href="${base}/resources/styles/11fc3038.odometer-theme-default.css"/>
+
+    <link rel="stylesheet" href="${base}/resources/styles/4be926e6.app-summary.css">
+    <link rel="stylesheet" href="${base}/resources/styles/57338420.app-device.css">
+    <link rel="stylesheet" href="${base}/resources/styles/265f00e3.app-channel-quantity-stat.css">
+
+   
+
+</head>
+<body>
+
+<!--Header-part-->
+
+
+<div id="header">
+    <h1>
+       <a class="main-title" href="/" target="_blank"><img src="${base}/resources/images/logo-big.png" /></a>
+        <a class="main-title" href="/" target="_blank">异步框架数据平台</a>
+    </h1>
+</div>
+<!--close-Header-part-->
+
+<!--top-Header-menu-float-right-->
+
+
+<div id="user-nav-float-right" class="navbar navbar-inverse">
+    <ul class="nav">
+        <li class=""><a title="注销" href="http://www.miui.com/forum-423-1.html"> <span
+            class="text">注销</span></a></li>
+     
+        <!-- <li class=""><a title="" href="login.html"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li> -->
+    </ul>
+</div>
+
+<!--<div class="widget-title bg_ly app-select-nav-header">-->
+    <!--<h5 class="app-label">我的应用</h5>-->
+    <!--<h5 class="app-title" id="app-title-label"></h5>-->
+<!--</div>-->
+
+<!--sidebar-menu-->
+<div class="clearfix" id="sidebar">
+    <ul>
+        <li class="submenu open" data-href-a-same-qs="app-summary.html">
+            <a class="only-one-level" href="javascript:;">
+                <i class="icon ico-sidebar-summary"></i>
+                <span>应用概况</span>
+            </a>
+        </li>
+        <li class="submenu ">
+            <a href="#">
+                <i class="icon ico-sidebar-user-parti"></i>
+                <span>用户参与</span>
+                <i class="icon ico-direct-down-arrow"></i>
+            </a>
+            <ul>
+                <li class=""  data-href-a-same-qs="app-new-user-and-start.html">
+                    <span class="ico-own-circle"></span><a>新增与启动</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-active-spec.html">
+                    <span class="ico-own-circle"></span><a>活跃详情</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-new-user-stay.html">
+                    <span class="ico-own-circle"></span><a>新用户留存</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-use-time.html">
+                    <span class="ico-own-circle"></span><a>使用时长</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-version-distribute.html">
+                    <span class="ico-own-circle"></span><a>版本分布</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-page-visit.html">
+                    <span class="ico-own-circle"></span><a>页面访问</a>
+                </li>
+            </ul>
+        </li>
+        <li class="submenu ">
+            <a href="#">
+                <i class="icon ico-sidebar-channel"></i>
+                <span>渠道统计</span>
+                <i class="icon ico-direct-down-arrow"></i>
+            </a>
+
+
+            <ul>
+                <li class="" data-href-a-same-qs="app-channel-quantity-stat.html">
+                    <span class="ico-own-circle"></span><a>渠道数量统计</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-channel-quality-stat.html">
+                    <span class="ico-own-circle"></span><a>渠道质量统计</a>
+                </li>
+            </ul>
+        </li>
+        <li class="submenu ">
+            <a href="#">
+                <i class="icon ico-sidebar-event"></i>
+                <span>事件统计</span>
+                <i class="icon ico-direct-down-arrow"></i>
+            </a>
+            <ul>
+                <li class="" data-href-a-same-qs="app-events1.html">
+                    <span class="ico-own-circle"></span><a>自定义事件</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-event-transfer-ratio.html">
+                    <span class="ico-own-circle"></span><a>事件转化率</a>
+                </li>
+            </ul>
+        </li>
+        <li class="submenu ">
+            <a href="#">
+                <i class="icon ico-sidebar-device"></i>
+                <span>设备信息</span>
+                <i class="icon ico-direct-down-arrow"></i>
+            </a>
+            <ul>
+                <li class="" data-href-a-same-qs="app-device-attr.html">
+                    <span class="ico-own-circle"></span><a>设备属性</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-network-net.html">
+                    <span class="ico-own-circle"></span><a>网络与运营商</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-region-distribute.html">
+                    <span class="ico-own-circle"></span><a>地区分布</a>
+                </li>
+            </ul>
+        </li>
+        <li class="submenu ">
+            <a href="#">
+                <i class="icon ico-sidebar-monitor"></i>
+                <span>网络监控</span>
+                <i class="icon ico-direct-down-arrow"></i>
+            </a>
+            <ul>
+                <li class="" data-href-a-same-qs="app-networks-survey-monitor.html">
+                    <span class="ico-own-circle"></span><a>监控概况</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-networks-query-num-monitor.html">
+                    <span class="ico-own-circle"></span><a>请求数</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-networks-query-time-monitor.html">
+                    <span class="ico-own-circle"></span><a>请求时长</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-networks-error-http-monitor.html">
+                    <span class="ico-own-circle"></span><a>错误</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-networks-alert-monitor.html">
+                    <span class="ico-own-circle"></span><a>报警</a>
+                </li>
+                <li class="@@app-web-url-monitor" data-href-a-same-qs="app-networks-url-monitor.html">
+                    <span class="ico-own-circle"></span><a>监控设置</a>
+                </li>
+            </ul>
+        </li>
+        <li class="submenu ">
+            <a href="#">
+                <i class="icon ico-sidebar-setting"></i>
+                <span>设置</span>
+                <i class="icon ico-direct-down-arrow"></i>
+            </a>
+            <ul>
+                <li class="" data-href-a-same-qs="app-user-group.html">
+                    <span class="ico-own-circle"></span><a>用户群</a>
+                </li>
+            </ul>
+        </li>
+        <li class="submenu ">
+            <a href="#">
+                <i class="icon ico-sidebar-crash"></i>
+                <span>错误分析</span>
+                <i class="icon ico-direct-down-arrow"></i>
+            </a>
+            <ul>
+                <li class="" data-href-a-same-qs="app-crash-analytics.html">
+                    <span class="ico-own-circle"></span><a>错误统计</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-crash-list.html">
+                    <span class="ico-own-circle"></span><a>错误列表</a>
+                </li>
+            </ul>
+        </li>
+        <li class="submenu ">
+            <a href="#">
+                <i class="icon ico-sidebar-test"></i>
+                <span>集成测试</span>
+                <i class="icon ico-direct-down-arrow"></i>
+            </a>
+            <ul>
+                <li class="" data-href-a-same-qs="app-integrate-test-device.html">
+                    <span class="ico-own-circle"></span><a>测试设备</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-integrate-test-log.html">
+                    <span class="ico-own-circle"></span><a>测试日志</a>
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+</div>
+
+
+
+<div id="content">
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div>
+                    <div class="btn-group" id="attr-type-btn-groups">
+                        <button class="btn btn-primary" data-attr-type="model" type="button">机型</button>
+                        <button class="btn btn-primary active" id="resolution-widget-tab" data-attr-type="resolution" type="button" style="display: inline-block;">分辨率</button>
+                        <button class="btn btn-primary" data-attr-type="os" type="button">系统</button>
+                    </div>
+
+                </div>
+                <div class="widget-box channel-filter">
+    <div class="widget-title bg_ly" data-toggle="collapse" href="#collapseG1">
+        <h5 class="channel-filter-title">筛选1：用户筛选条件：全部版本；全部用户群；7天内</h5>
+        <span class="icon">
+            <i class="btn-up-arrow">
+            </i>
+        </span>
+    </div>
+    <div class="widget-content nopadding in collapse" id="collapseG1" style="height: auto;">
+
+        <!--<div class="alert alert-danger filter-condition-repeat-error">-->
+            <!--所选筛选条件已存在-->
+            <!--<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>-->
+        <!--</div>-->
+
+        
+
+        
+            <div class="row-fluid">
+                <span class="line-label">选择版本</span>
+                <div class="btn-group" data-choose-type="version">
+                    <button class="btn btn-first active" data-key="ALL" title="全部">全部</button>
+                    
+                </div>
+
+                
+            </div>
+        
+
+        
+            <div class="row-fluid">
+                <span class="line-label">选择用户群</span>
+                <div class="btn-group" data-choose-type="userGroup">
+                    <button class="btn btn-first active" data-key="0" title="全部">全部</button>
+                    
+                </div>
+            </div>
+        
+
+        
+            <div class="row-fluid">
+                <span class="line-label">选择时段</span>
+                <div class="btn-group" id="timeInterval">
+                    <button class="btn active" data-key="7" title="7天">7天</button>
+                    <button class="btn" data-key="14" title="14天">14天</button>
+                    <button class="btn last-btn" data-key="30" title="30天">30天</button>
+                    <div class="input-append">
+                        <input class="daterange" name="daterange" type="text" readonly="">
+                        <span class="add-on">
+                            <i class="ico-calendar"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+        
+
+        <div class="row-fluid">
+            <button class="btn confirm-btn" data-behavior="confirm">确定</button>
+        </div>
+    </div>
+</div>
+                <div class="widget-box today-timing-data" id="today-timing-data">
+                    <div class="widget-title">
+                        <h5>今日实时数据</h5>
+                        <span class="icon">
+                            <i class="ico-question-mark"
+                               data-content="<p>今日实时数据按小时展示00:00-23:00每个小时内的数据变化情况。</p>"
+                               data-toggle="tooltip">
+                            </i>
+                        </span>
+                        <span class="widget-title-tab" id="today-title-tab">
+                            <span class="active" data-tab="today-realtime-new-added-user">新增用户</span>
+                            <span data-tab="today-realtime-start-time">启动次数</span>
+                        </span>
+                    </div>
+                    <div class="widget-content">
+                        <div class="row-fluid">
+                            <div class="btn-group" id="today-btn-group">
+                                <button class="btn" data-interval="0">不对比</button>
+                                <button class="btn" data-interval="1">对比昨天</button>
+                                <button class="btn" data-interval="7">对比7天前</button>
+                                <button class="btn" data-interval="30">对比30天前</button>
+                            </div>
+                        </div>
+                        <div class="timing-chart">
+                        </div>
+                        <div class="loading" title="" style="display: block;">加载中，请稍候...</div>
+                    </div>
+                </div>
+                <div class="widget-box trend-data" id="trend-data">
+                    <div class="widget-title">
+                        <h5>趋势数据</h5>
+                        <span class="icon">
+                            <i class="ico-question-mark"
+                               data-content="<p>此处选择的时间段为展示日数据的天数，如7天的日活用户是指最近7天每天的日活用户，不是最近7天内活跃过的用户。</p>"
+                               data-toggle="tooltip">
+                            </i>
+                        </span>
+                        <span class="widget-title-tab" id="trend-title-tab">
+                            <span class="active" data-tab="trend-new-added-user">新增用户</span>
+                            <span data-tab="trend-day-active-user">日活用户</span>
+                            <span data-tab="trend-start-time">启动次数</span>
+                        </span>
+                    </div>
+                    <div class="widget-content">
+                        <div class="row-fluid">
+                            <div class="btn-group" id="trend-btn-group">
+                                <button class="btn" data-interval="7">7天</button>
+                                <button class="btn" data-interval="14">14天</button>
+                                <button class="btn" data-interval="30">30天</button>
+                                <div class="input-append">
+                                    <input class="daterange" name="daterange" type="text" readonly/>
+                                    <span class="add-on">
+                                        <i class="ico-calendar"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trend-chart">
+                        </div>
+                        <div class="loading" title="" style="display: block;">加载中，请稍候...</div>
+                    </div>
+                </div>
+                <div class="row-fluid top-ten-channel">
+                    <div class="span6" id="new-added-user-top-ten-container">
+                        <div class="widget-box">
+                            <div class="widget-title bg_lo" data-toggle="collapse"
+                                 href="#collapseG3">
+                                <h5>新增用户TOP10渠道</h5>
+                                <span class="icon">
+                                    <i class="ico-question-mark"
+                                       data-content="<p>昨天新增用户数前10的渠道、该渠道新增用户数量和在昨日总体新增用户中的占比。</p>"
+                                       data-toggle="tooltip">
+                                    </i>
+                                </span>
+                            </div>
+                            <div class="widget-content updates collapse in">
+                                <div class="loading" title="" style="display: block;">加载中，请稍候...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span6" id="day-active-user-top-ten-container">
+                        <div class="widget-box">
+                            <div class="widget-title bg_lo" data-toggle="collapse"
+                                 href="#collapseG3">
+                                <h5>日活用户TOP10渠道</h5>
+                                <span class="icon">
+                                    <i class="ico-question-mark"
+                                       data-content="<p>昨天日活用户数前10的渠道、该渠道日活用户数量和在昨日总体日活用户中的占比。</p>"
+                                       data-toggle="tooltip">
+                                    </i>
+                                </span>
+                            </div>
+                            <div class="widget-content updates collapse in">
+                                <div class="loading" title="" style="display: block;">加载中，请稍候...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--Footer-part-->
+<div class="row-fluid footer-container">
+    <div id="footer" class="span12">
+        <div class="row-fluid first-line">
+            <span>如有疑问或需要帮助，请邮件至&nbsp;<a href="mailto:developer@eccar.com.cn" target="_self">developer@eccar.com.cn</a></span>
+            <span class="pull-right">
+                专卡网站：
+                <a href="http://www.eccar.com.cn" target="_blank">专卡供应链</a>
+                <span class="vertical-line"></span>
+                <a href="http://www.eccar.com.cn/admin/login.jsp" target="_blank">管理平台</a>
+                <span class="vertical-line"></span>
+                <a href="http://bi.eccar.com.cn/" target="_blank">数据中心</a>
+              
+               
+            </span>
+        </div>
+
+        <div class="row-fluid second-line">
+            <span>
+                
+            </span>
+            <span class="pull-right">
+                Powered by ECCAR Team - 专卡供应链 粤ICP备15056514号
+            </span>
+        </div>
+
+    </div>
+</div>
+<!--end-Footer-part-->
+
+<script src="${base}/resources/scripts/2965b7d0.vendor.js"></script>
+
+<script src="${base}/resources/scripts/f7def6e7.base.js"></script>
+
+<script src="${base}/resources/scripts/6f39fdb8.daterangepicker-hybrid.js"></script>
+
+<script >
+    $(document).ready(function(){
+            $.sub("date-range-change", function(a, b) {
+                var c = b.start._d.valueOf(),
+                    d = b.end._d.valueOf() + 1 - 864e5,
+                    e = b.target,
+                    f = e.parents(".btn-group"),
+                    g = e.parents(".channel-filter"),
+                    h = g.find(".widget-content").attr("id");
+                d - c >= 0 && 2592e7 >= d - c ? (f.find(".btn").removeClass("active"), f.find(".input-append").addClass("active"), r[h].interval = 0, r[h].beginTs = c, r[h].endTs = d, k(h)) : (alert("结束时间必须大于等于开始时间，最大时间间隔为300天，请重新选择"), $('input[name="daterange"]').data("daterangepicker").setStartDate(date("%Y/%m/%d", r[h].beginTs || +new Date - 864e5)), $('input[name="daterange"]').data("daterangepicker").setEndDate(date("%Y/%m/%d", r[h].endTs || +new Date - 864e5)), $('input[name="daterange"]').val(date("%Y/%m/%d", r[h].beginTs || +new Date - 864e5) + " - " + date("%Y/%m/%d", r[h].endTs || +new Date - 864e5)))
+            });
+
+            var a = new Date(+new Date - 864e5);
+                $('input[name="daterange"]').daterangepicker({
+                    format: "YYYY/MM/DD",
+                    startDate: a,
+                    endDate: a,
+                    maxDate: a
+                }, function(a, b) {
+                    $.pub("date-range-change", {
+                        start: a,
+                        end: b
+                    })
+                }).val(date("%Y/%m/%d", +new Date - 864e5) + " - " + date("%Y/%m/%d", +new Date - 864e5)), $.sub("date-range-change", function(a, b) {
+                    var d = b.start._d.valueOf(),
+                        e = b.end._d.valueOf() + 1 - 864e5;
+                    e - d >= 0 && 2592e7 >= e - d ? (q = d, r = e, p = 0, c()) : (alert("结束时间必须大于等于开始时间，最大时间间隔为300天，请重新选择"), $('input[name="daterange"]').data("daterangepicker").setStartDate(date("%Y/%m/%d", q || +new Date - 864e5)), $('input[name="daterange"]').data("daterangepicker").setEndDate(date("%Y/%m/%d", r || +new Date - 864e5)), $('input[name="daterange"]').val(date("%Y/%m/%d", q || +new Date - 864e5) + " - " + date("%Y/%m/%d", r || +new Date - 864e5)))
+                });
+
+
+                $("#timeInterval .btn").click(function(){
+                         var b = {
+                                channel: "c",
+                                version: "v",
+                                userGroup: "g",
+                                timeInterval: "interval",
+                                compareDate: "chooseCompareDate"
+                            },
+                            c = $(this),
+                            d = c.parent(".btn-group"),
+                            e = c.parents(".channel-filter"),
+                            f = e.find(".widget-content").attr("id"),
+                            g = null;
+                            console.log(d)
+                          
+                            d.find(".btn").removeClass("active"), d.find(".input-append").removeClass("active");
+                            var h = new Date(+new Date - 864e5),
+                                i = null;
+                            switch (c.attr("data-key")) {
+                            case "7":
+                                i = new Date(+h - 5184e5);
+                                break;
+                            case "14":
+                                i = new Date(+h - 11232e5);
+                                break;
+                            case "30":
+                                i = new Date(+h - 25056e5)
+                            }
+                            $('input[name="daterange"]').unbind(), $('input[name="daterange"]').daterangepicker({
+                                format: "YYYY/MM/DD",
+                                startDate: i,
+                                endDate: h,
+                                maxDate: h
+                            }, function(a, b) {
+                                var c = $($(this)[0].element);
+                                $.pub("date-range-change", {
+                                    start: a,
+                                    end: b,
+                                    target: c
+                                })
+                            }).val(date("%Y/%m/%d", +i) + " - " + date("%Y/%m/%d", +new Date - 864e5))
+                                c.addClass("active")
+                });
+
+               
+
+    });
+  
+
+</script>
+
+<script src="${base}/resources/scripts/h.js"></script>
+
+
+
+</body>
+</html>

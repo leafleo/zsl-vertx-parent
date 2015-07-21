@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <title>异步框架数据平台</title>
+    <meta charset="UTF-8"/>
+
+    <!--search-engine-meta-part-->
+    <meta name="description" content="小米应用商店的官方开发者后台，统计服务，免费提供应用统计数据的查看。开发者可以在这里查看自己相关app的所有详细数据。">
+<meta name="keywords" content="小米开发者站，小米，小米商店，应用，APK，软件，游戏，商店，市场，开发者，提交，APK提交，提交应用，收录，上传，更新，应用更新，支持，技术支持，统计">
+<link rel="shortcut icon" href="http://www.eccar.com.cn/resources/ico/favicon.ico" type="image/x-icon">
+<link rel="icon" href="http://www.eccar.com.cn/resources/ico/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="${base}/resources/styles/4ccfa486.base.css">
+
+    <link rel="stylesheet" href="${base}/resources/styles/101ddfb2.daterangepicker-bs2.css"/>
+    <link rel="stylesheet" href="${base}/resources/styles/11fc3038.odometer-theme-default.css"/>
+
+    <link rel="stylesheet" href="${base}/resources/styles/4be926e6.app-summary.css">
+</head>
+<body>
+
+<!--Header-part-->
+
+
+<div id="header">
+    <h1>
+        <a class="main-title" href="/" target="_blank"><img src="${base}/resources/images/logo-big.png" /></a>
+        <a class="main-title" href="/" target="_blank">异步框架数据平台（此平台支持js,groovy,rb等）</a>
+    </h1>
+</div>
+<!--close-Header-part-->
+
+<!--top-Header-menu-float-right-->
+
+
+<div id="user-nav-float-right" class="navbar navbar-inverse">
+    <ul class="nav">
+        <li class=""><a title="注销" href="http://www.miui.com/forum-423-1.html"> <span
+            class="text">注销</span></a></li>
+     
+        <!-- <li class=""><a title="" href="login.html"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li> -->
+    </ul>
+</div>
+
+<!--<div class="widget-title bg_ly app-select-nav-header">-->
+    <!--<h5 class="app-label">我的应用</h5>-->
+    <!--<h5 class="app-title" id="app-title-label"></h5>-->
+<!--</div>-->
+
+<!--sidebar-menu-->
+<div class="clearfix" id="sidebar">
+    <ul>
+        <li class="submenu open" data-href-a-same-qs="app-summary.html">
+            <a class="only-one-level" href="javascript:;">
+                <i class="icon ico-sidebar-summary"></i>
+                <span>应用概况</span>
+            </a>
+        </li>
+        <li class="submenu ">
+            <a href="#">
+                <i class="icon ico-sidebar-user-parti"></i>
+                <span>用户参与</span>
+                <i class="icon ico-direct-down-arrow"></i>
+            </a>
+            <ul>
+                <li class=""  data-href-a-same-qs="app-new-user-and-start.html">
+                    <span class="ico-own-circle"></span><a>新增与启动</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-active-spec.html">
+                    <span class="ico-own-circle"></span><a>活跃详情</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-new-user-stay.html">
+                    <span class="ico-own-circle"></span><a>新用户留存</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-use-time.html">
+                    <span class="ico-own-circle"></span><a>使用时长</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-version-distribute.html">
+                    <span class="ico-own-circle"></span><a>版本分布</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-page-visit.html">
+                    <span class="ico-own-circle"></span><a>页面访问</a>
+                </li>
+            </ul>
+        </li>
+        <li class="submenu ">
+            <a href="#">
+                <i class="icon ico-sidebar-channel"></i>
+                <span>渠道统计</span>
+                <i class="icon ico-direct-down-arrow"></i>
+            </a>
+
+
+            <ul>
+                <li class="" data-href-a-same-qs="app-channel-quantity-stat.html">
+                    <span class="ico-own-circle"></span><a>渠道数量统计</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-channel-quality-stat.html">
+                    <span class="ico-own-circle"></span><a>渠道质量统计</a>
+                </li>
+            </ul>
+        </li>
+        <li class="submenu ">
+            <a href="#">
+                <i class="icon ico-sidebar-event"></i>
+                <span>事件统计</span>
+                <i class="icon ico-direct-down-arrow"></i>
+            </a>
+            <ul>
+                <li class="" data-href-a-same-qs="app-events1.html">
+                    <span class="ico-own-circle"></span><a>自定义事件</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-event-transfer-ratio.html">
+                    <span class="ico-own-circle"></span><a>事件转化率</a>
+                </li>
+            </ul>
+        </li>
+        <li class="submenu ">
+            <a href="#">
+                <i class="icon ico-sidebar-device"></i>
+                <span>设备信息</span>
+                <i class="icon ico-direct-down-arrow"></i>
+            </a>
+            <ul>
+                <li class="" data-href-a-same-qs="app-device-attr.html">
+                    <span class="ico-own-circle"></span><a>设备属性</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-network-net.html">
+                    <span class="ico-own-circle"></span><a>网络与运营商</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-region-distribute.html">
+                    <span class="ico-own-circle"></span><a>地区分布</a>
+                </li>
+            </ul>
+        </li>
+        <li class="submenu ">
+            <a href="#">
+                <i class="icon ico-sidebar-monitor"></i>
+                <span>网络监控</span>
+                <i class="icon ico-direct-down-arrow"></i>
+            </a>
+            <ul>
+                <li class="" data-href-a-same-qs="app-networks-survey-monitor.html">
+                    <span class="ico-own-circle"></span><a>监控概况</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-networks-query-num-monitor.html">
+                    <span class="ico-own-circle"></span><a>请求数</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-networks-query-time-monitor.html">
+                    <span class="ico-own-circle"></span><a>请求时长</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-networks-error-http-monitor.html">
+                    <span class="ico-own-circle"></span><a>错误</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-networks-alert-monitor.html">
+                    <span class="ico-own-circle"></span><a>报警</a>
+                </li>
+                <li class="@@app-web-url-monitor" data-href-a-same-qs="app-networks-url-monitor.html">
+                    <span class="ico-own-circle"></span><a>监控设置</a>
+                </li>
+            </ul>
+        </li>
+        <li class="submenu ">
+            <a href="#">
+                <i class="icon ico-sidebar-setting"></i>
+                <span>设置</span>
+                <i class="icon ico-direct-down-arrow"></i>
+            </a>
+            <ul>
+                <li class="" data-href-a-same-qs="app-user-group.html">
+                    <span class="ico-own-circle"></span><a>用户群</a>
+                </li>
+            </ul>
+        </li>
+        <li class="submenu ">
+            <a href="#">
+                <i class="icon ico-sidebar-crash"></i>
+                <span>错误分析</span>
+                <i class="icon ico-direct-down-arrow"></i>
+            </a>
+            <ul>
+                <li class="" data-href-a-same-qs="app-crash-analytics.html">
+                    <span class="ico-own-circle"></span><a>错误统计</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-crash-list.html">
+                    <span class="ico-own-circle"></span><a>错误列表</a>
+                </li>
+            </ul>
+        </li>
+        <li class="submenu ">
+            <a href="#">
+                <i class="icon ico-sidebar-test"></i>
+                <span>集成测试</span>
+                <i class="icon ico-direct-down-arrow"></i>
+            </a>
+            <ul>
+                <li class="" data-href-a-same-qs="app-integrate-test-device.html">
+                    <span class="ico-own-circle"></span><a>测试设备</a>
+                </li>
+                <li class="" data-href-a-same-qs="app-integrate-test-log.html">
+                    <span class="ico-own-circle"></span><a>测试日志</a>
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+</div>
+
+
+
+<div id="content">
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="widget-box" id="app-summary-yesterday-stas">
+                    <div class="widget-title bg_ly">
+                        <h5>用户概况</h5>
+                        <span class="icon">
+                            <i class="ico-question-mark" data-content="<p>新增用户数：新增的设备数，卸载重装不算作新增。</p><p>日活用户数：当日在前台使用过应用的设备数。</p><p>启动次数：当日应用启动在前台的次数，相邻2次启动的时间间隔如果在30秒内会视为一次启动。</p><p>月活用户数：最近30天内（不含今天）至少启动过一次应用的设备数。</p><p>累计总用户数：开始使用小米统计服务后所有新增用户的总和。</p><p>今日数据为今日截止目前该统计项的累计数值，今日数据每5分钟更新一次。</p>" data-toggle="tooltip" data-original-title="" title="">
+            </i>
+                        </span>
+                    </div>
+                    <div class="widget-content nopadding collapse in" id="collapseG2">
+                        <div class="container-fluid user-statistics">
+                            <div class="left">
+                                <div class="yesterday-div">
+                                    <span class="yesterday-div-tip">
+                                        昨日
+                                    </span>
+                                </div>
+                                <div class="today-div">
+                                    <span class="today-div-tip">
+                                        今日
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="right">
+
+                                <div class="span">
+                                    <div class="yesterday-div">
+                                        <span>新增</span>
+                                        <span class="number" title="0">0</span>
+                                        <div class="up">
+                                            <i class="ico-summary-up-arrow"></i>
+                                            <span class="change-num" title="0">0</span>
+                                            <span class="change-ratio" title="0%">(0%)</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="today-nu today-div">新增<span class="today-div-num odometer odometer-theme-default" title="0"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span></div></span></div>
+                                </div>
+                                <div class="span">
+                                    <div class="yesterday-div">
+                                        <span>日活</span>
+                                        <span class="number" title="0">0</span>
+                                        <div class="up">
+                                            <i class="ico-summary-up-arrow"></i>
+                                            <span class="change-num" title="0">0</span>
+                                            <span class="change-ratio" title="0%">(0%)</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="today-aud today-div">日活<span class="today-div-num odometer odometer-theme-default" title="0"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span></div></span></div>
+                                </div>
+                                <div class="span">
+                                    <div class="yesterday-div">
+                                        <span>启动</span>
+                                        <span class="number" title="0">0</span>
+                                        <div class="up">
+                                            <i class="ico-summary-up-arrow"></i>
+                                            <span class="change-num" title="0">0</span>
+                                            <span class="change-ratio" title="0%">(0%)</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="today-stime today-div">启动<span class="today-div-num odometer odometer-theme-default" title="0"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span></div></span></div>
+                                </div>
+                                <div class="span">
+                                    <div class="yesterday-div">
+                                        <span>月活</span>
+                                        <span class="number" title="0">0</span>
+                                        <div class="up">
+                                            <i class="ico-summary-up-arrow"></i>
+                                            <span class="change-num" title="0">0</span>
+                                            <span class="change-ratio" title="0%">(0%)</span>
+                                        </div>
+                                    </div>
+                                    <div class="today-aum today-div">
+                                        <div class="placeholder"></div>
+                                    </div>
+                                </div>
+                                <div class="span">
+                                    <div class="yesterday-div">
+                                        <span>累计</span>
+                                        <span class="number" title="0">0</span>
+                                        <div class="up">
+                                            <i class="ico-summary-up-arrow"></i>
+                                            <span class="change-num" title="0">0</span>
+                                            <span class="change-ratio" title="0%">(0%)</span>
+                                        </div>
+                                    </div>
+                                    <div class="today-u today-div">
+                                        <div class="placeholder"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-content nopadding">
+                        <div class="loading" title="" style="display: block;">加载中，请稍候...</div>
+                    </div>
+                </div>
+                <div class="widget-box today-timing-data" id="today-timing-data">
+                    <div class="widget-title">
+                        <h5>今日实时数据</h5>
+                        <span class="icon">
+                            <i class="ico-question-mark"
+                               data-content="<p>今日实时数据按小时展示00:00-23:00每个小时内的数据变化情况。</p>"
+                               data-toggle="tooltip">
+                            </i>
+                        </span>
+                        <span class="widget-title-tab" id="today-title-tab">
+                            <span class="active" data-tab="today-realtime-new-added-user">新增用户</span>
+                            <span data-tab="today-realtime-start-time">启动次数</span>
+                        </span>
+                    </div>
+                    <div class="widget-content">
+                        <div class="row-fluid">
+                            <div class="btn-group" id="today-btn-group">
+                                <button class="btn" data-interval="0">不对比</button>
+                                <button class="btn" data-interval="1">对比昨天</button>
+                                <button class="btn" data-interval="7">对比7天前</button>
+                                <button class="btn" data-interval="30">对比30天前</button>
+                            </div>
+                        </div>
+                        <div class="timing-chart">
+                        </div>
+                        <div class="loading" title="" style="display: block;">加载中，请稍候...</div>
+                    </div>
+                </div>
+                <div class="widget-box trend-data" id="trend-data">
+                    <div class="widget-title">
+                        <h5>趋势数据</h5>
+                        <span class="icon">
+                            <i class="ico-question-mark"
+                               data-content="<p>此处选择的时间段为展示日数据的天数，如7天的日活用户是指最近7天每天的日活用户，不是最近7天内活跃过的用户。</p>"
+                               data-toggle="tooltip">
+                            </i>
+                        </span>
+                        <span class="widget-title-tab" id="trend-title-tab">
+                            <span class="active" data-tab="trend-new-added-user">新增用户</span>
+                            <span data-tab="trend-day-active-user">日活用户</span>
+                            <span data-tab="trend-start-time">启动次数</span>
+                        </span>
+                    </div>
+                    <div class="widget-content">
+                        <div class="row-fluid">
+                            <div class="btn-group" id="trend-btn-group">
+                                <button class="btn" data-interval="7">7天</button>
+                                <button class="btn" data-interval="14">14天</button>
+                                <button class="btn" data-interval="30">30天</button>
+                                <div class="input-append">
+                                    <input class="daterange" name="daterange" type="text" readonly/>
+                                    <span class="add-on">
+                                        <i class="ico-calendar"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trend-chart">
+                        </div>
+                        <div class="loading" title="" style="display: block;">加载中，请稍候...</div>
+                    </div>
+                </div>
+                <div class="row-fluid top-ten-channel">
+                    <div class="span6" id="new-added-user-top-ten-container">
+                        <div class="widget-box">
+                            <div class="widget-title bg_lo" data-toggle="collapse"
+                                 href="#collapseG3">
+                                <h5>新增用户TOP10渠道</h5>
+                                <span class="icon">
+                                    <i class="ico-question-mark"
+                                       data-content="<p>昨天新增用户数前10的渠道、该渠道新增用户数量和在昨日总体新增用户中的占比。</p>"
+                                       data-toggle="tooltip">
+                                    </i>
+                                </span>
+                            </div>
+                            <div class="widget-content updates collapse in">
+                                <div class="loading" title="" style="display: block;">加载中，请稍候...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span6" id="day-active-user-top-ten-container">
+                        <div class="widget-box">
+                            <div class="widget-title bg_lo" data-toggle="collapse"
+                                 href="#collapseG3">
+                                <h5>日活用户TOP10渠道</h5>
+                                <span class="icon">
+                                    <i class="ico-question-mark"
+                                       data-content="<p>昨天日活用户数前10的渠道、该渠道日活用户数量和在昨日总体日活用户中的占比。</p>"
+                                       data-toggle="tooltip">
+                                    </i>
+                                </span>
+                            </div>
+                            <div class="widget-content updates collapse in">
+                                <div class="loading" title="" style="display: block;">加载中，请稍候...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--Footer-part-->
+<div class="row-fluid footer-container">
+    <div id="footer" class="span12">
+        <div class="row-fluid first-line">
+            <span>如有疑问或需要帮助，请邮件至&nbsp;<a href="mailto:developer@eccar.com.cn" target="_self">developer@eccar.com.cn</a></span>
+            <span class="pull-right">
+                专卡网站：
+                <a href="http://www.eccar.com.cn" target="_blank">专卡供应链</a>
+                <span class="vertical-line"></span>
+                <a href="http://www.eccar.com.cn/admin/login.jsp" target="_blank">管理平台</a>
+                <span class="vertical-line"></span>
+                <a href="http://bi.eccar.com.cn/" target="_blank">数据中心</a>
+              
+               
+            </span>
+        </div>
+
+        <div class="row-fluid second-line">
+            <span>
+                
+            </span>
+            <span class="pull-right">
+                Powered by ECCAR Team - 专卡供应链 粤ICP备15056514号
+            </span>
+        </div>
+
+    </div>
+</div>
+<!--end-Footer-part-->
+
+<script src="${base}/resources/scripts/2965b7d0.vendor.js"></script>
+
+<script src="${base}/resources/scripts/f7def6e7.base.js"></script>
+
+
+
+</body>
+</html>
