@@ -26,7 +26,7 @@ public class CommonController extends BaseController<Admin> {
 		return "/common/error500";
 	}
 	
-	@RequestMapping(value="/1")
+	@RequestMapping(value="/1/:id")
 	public String index1(HttpServerRequest request,HttpServerResponse response,String hello){
 		return "/common/1";
 	}

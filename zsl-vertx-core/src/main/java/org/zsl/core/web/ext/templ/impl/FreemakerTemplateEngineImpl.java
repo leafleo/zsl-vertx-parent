@@ -81,7 +81,7 @@ public class FreemakerTemplateEngineImpl extends
 	    }
 	    if(logger.isInfoEnabled()){
 	    	variables.forEach((k,v)->{
-	    		 logger.debug("current context variables->k:{},v:{}"+k,v);
+	    		 logger.debug("current context variables->k:{}<======>v:{}",k,v);
 	    	});
 	    }
 	   

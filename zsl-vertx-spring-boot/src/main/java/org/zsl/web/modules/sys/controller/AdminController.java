@@ -30,7 +30,7 @@ public class AdminController extends BaseController<Admin> {
 		Session session = context.session();
 		List<Admin> list = adminService.findAll();
 		System.out.println(list);
-		response.end(list.toString());
+		response.end("aa",list.toString());
 		//return "/sys/list";
 	}
 	

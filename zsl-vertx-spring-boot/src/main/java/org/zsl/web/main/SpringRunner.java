@@ -17,6 +17,7 @@ public class SpringRunner {
 	private static final Logger logger = LoggerFactory.getLogger(SpringRunner.class);
 	private static final Config config = Config.getInstance();
 	public static void main( String[] args ) {
+		long now = System.currentTimeMillis();
 		//init applicationContext
 	    final Vertx vertx = Vertx.vertx();
 	   // vertx.deployVerticle(new Server());*/
@@ -27,7 +28,9 @@ public class SpringRunner {
 	    // Serve the non private static pages
 	    router.route().handler(StaticHandler.create());
 	    vertx.createHttpServer().requestHandler(router::accept).listen(config.getInt(Config.PORT));
-	    logger.info("server start listen port {}",config.getInt(Config.PORT));
+	    long end = System.currentTimeMillis();
+	    logger.warn("server start listen port {}",config.getInt(Config.PORT));
+	    logger.warn("server start time : {}ms",(end-now));
 	  }
 	
 }

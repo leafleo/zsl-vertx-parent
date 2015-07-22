@@ -72,7 +72,9 @@ public class SpringConfiguration {
 	  public DatabasePopulator databasePopulator() {
 	    final ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
 	    populator.setContinueOnError(false);
-	  //  populator.addScript(new ClassPathResource("products.sql"));
+	    if(env.getProperty("jdbc.driverClassName").equals("org.h2.Driver")){
+	    	populator.addScript(new ClassPathResource("products.sql"));
+	    }
 	    return populator;
 	  }
 }
